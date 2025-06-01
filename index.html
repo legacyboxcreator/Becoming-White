@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,6 +40,16 @@
     .section ul {
       padding-left: 1.2rem;
     }
+    .images {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .images img {
+      width: 100%;
+      border-radius: 8px;
+    }
     .cta {
       background-color: #111;
       color: white;
@@ -55,6 +66,11 @@
       text-decoration: none;
       margin-top: 1rem;
     }
+    .note {
+      font-size: 0.9rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
     @media (min-width: 768px) {
       .hero h1 {
         font-size: 2.5rem;
@@ -68,13 +84,19 @@
       .section {
         max-width: 900px;
       }
+      .images {
+        flex-direction: row;
+      }
+      .images img {
+        width: 32%;
+      }
     }
   </style>
 </head>
 <body>
   <div class="hero">
     <h1>Becoming White: Power, Identity & Legacy</h1>
-    <p>A self-paced virtual course inspired by the book Becoming White by Paris Burton. Learn how systems of power were built—and how to build your legacy with full awareness.</p>
+    <p>A self-paced virtual course inspired by the book <strong>Becoming White</strong> by <strong>Legacy Box LLC</strong>. Learn how systems of power were built—and how to build your legacy with full awareness.</p>
   </div>
 
   <div class="section">
@@ -95,12 +117,20 @@
       <li>🏛️ Reentry and prison education programs</li>
       <li>👨‍👩‍👧 Families and DEI-focused professionals</li>
     </ul>
+
+    <div class="images">
+      <img src="classroom1.png" alt="Course Image 1" />
+      <img src="classroom2.png" alt="Course Image 2" />
+      <img src="classroom3.png" alt="Course Image 3" />
+    </div>
   </div>
 
   <div class="cta">
     <h2>Ready to begin your journey?</h2>
     <p>Join the course now through Google Classroom and explore power, systems, and self in a whole new light.</p>
-    <a href="#">Join the Course</a>
+    <a href="https://classroom.google.com/c/NzgxNDg0OTg1ODc2?cjc=erukym46" target="_blank">Join the Course</a>
   </div>
+
+  <p class="note">✨ This course is free to access. <br> 📘 Optional but recommended reading: <a href="https://amzn.to/45DeMFl" target="_blank">Becoming White on Amazon</a></p>
 </body>
 </html>
