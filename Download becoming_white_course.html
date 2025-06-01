@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free virtual course exploring power, identity & legacy. Learn how systems of power were built and how to build your legacy with full awareness.">
+    <title>Becoming White: Power, Identity & Legacy | Legacy Box LLC</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" as="style">
+    <link rel="preload" href="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" as="script">
+    
+    <!-- Modern font loading with fallback -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap">
+    
+    <!-- Favicon with modern variants -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <style>
+        :root {
+            --primary: #0a0a12;
+            --primary-800: #1a1a2e;
+            --primary-600: #2a2a4a;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --light: #f8fafc;
+            --card-bg: rgba(255, 255, 255, 0.96);
+            --transition: cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --radius-sm: 4px;
+            --radius: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+        }
+
+        @supports (font-variation-settings: normal) {
+            :root { font-family: 'Inter var', sans-serif; }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light);
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section with modern gradient and animation */
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--primary-800));
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 15s infinite alternate;
+            z-index: 0;
+        }
+
+        @keyframes pulse {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+        }
+
+        /* Modern button with hover animation */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            color: var(--primary);
+            padding: 0.75rem 2rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s var(--transition);
+            box-shadow: var(--shadow-sm);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255,255,255,0.8), rgba(255,255,255,0.4));
+            transform: translateX(-100%);
+            transition: transform 0.6s var(--transition);
+            z-index: -1;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn:hover::after {
+            transform: translateX(0);
+        }
+
+        /* Content Sections with modern spacing */
+        section {
+            padding: 5rem 0;
+            scroll-margin-top: 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            color: var(--primary-800);
+            font-weight: 700;
+            letter-spacing: -0.015em;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+            border-radius: 3px;
+        }
+
+        /* Modern card design with backdrop-filter */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s var(--transition), box-shadow 0.3s var(--transition);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Modern list with custom markers */
+        .feature-list {
+            list-style-type: none;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 2rem;
+            line-height: 1.7;
+        }
+
+        .feature-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5em;
+            width: 1rem;
+            height: 2px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* Image Sections with modern hover effect */
+        .image-section {
+            margin: 3rem 0;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            position: relative;
+            isolation: isolate;
+        }
+
+        .image-section::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s var(--transition);
+        }
+
+        .image-section:hover::after {
+            opacity: 1;
+        }
+
+        .image-section img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s var(--transition);
+        }
+
+        .image-section:hover img {
+            transform: scale(1.02);
+        }
+
+        .image-caption {
+            margin-top: 0.75rem;
+            font-size: 0.875rem;
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        /* Who This Is For Section with grid */
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .audience-item {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            transition: all 0.3s var(--transition);
+        }
+
+        .audience-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .audience-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.25rem;
+            display: block;
+            transition: transform 0.3s var(--transition);
+        }
+
+        .audience-item:hover .audience-icon {
+            transform: scale(1.1);
+        }
+
+        .audience-item h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        /* Reading Suggestion with modern callout */
+        .reading-suggestion {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), transparent);
+            border-radius: var(--radius-lg);
+            margin-top: 3rem;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reading-suggestion::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--accent), var(--accent-hover));
+        }
+
+        /* Modern footer with subtle gradient */
+        footer {
+            background: linear-gradient(to right, var(--primary), var(--primary-800));
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 5rem;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+        }
+
+        /* Utility classes */
+        .text-gradient {
+            background: linear-gradient(90deg, var(--accent), #7c3aed);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+            
+            .hero {
+                padding: 4rem 0;
+            }
+            
+            .audience-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Reduced motion preference */
+        @media (prefers-reduced-motion) {
+            .hero::before,
+            .btn::after,
+            .card,
+            .image-section img,
+            .audience-item,
+            .audience-icon {
+                transition: none !important;
+                animation: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Becoming White: <span class="text-gradient">Power, Identity & Legacy</span></h1>
+                <p>A self-paced course inspired by the book Becoming White. Learn how systems of power were built—and how to build your legacy with full awareness.</p>
+                <a href="https://classroom.google.com/c/NzgxNDg0OTg1ODc2?cjc=erukym46" class="btn">
+                    Join the Course
+                    <ion-icon name="arrow-forward-outline" style="margin-left: 0.5rem;"></ion-icon>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- What You'll Learn -->
+    <section id="learn">
+        <div class="container">
+            <h2 class="section-title">What You'll Learn</h2>
+            <div class="card">
+                <ul class="feature-list">
+                    <li>The invention of whiteness and how it shapes power structures in contemporary society</li>
+                    <li>Identity formation, assimilation pressures, and survival strategies in systemic contexts</li>
+                    <li>Building intergenerational legacy while decoding systemic barriers</li>
+                    <li>Guided reflections, journal prompts, and multimedia learning experiences</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Image Placeholder 1 -->
+    <div class="container">
+        <div class="image-section">
+            <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Diverse students engaged in classroom discussion" loading="lazy">
+            <p class="image-caption">Transformative curriculum designed for critical engagement</p>
+        </div>
+    </div>
+    
+    <!-- Who This Is For -->
+    <section id="audience">
+        <div class="container">
+            <h2 class="section-title">Who This Is For</h2>
+            <div class="audience-grid">
+                <div class="card audience-item">
+                    <span class="audience-icon">🎓</span>
+                    <h3>HBCU Students & Scholars</h3>
+                    <p class="text-light">Exploring identity within academic institutions</p>
+                </div>
+                <div class="card audience-item">
+                    <span class="audience-icon">🏫</span>
+                    <h3>Educators & School Communities</h3>
+                    <p class="text-light">Implementing equitable practices</p>
+                </div>
+                <div class="card audience-item">
+                    <span class="audience-icon">🏛️</span>
+                    <h3>Reentry Education Programs</h3>
+                    <p class="text-light">Addressing systemic barriers</p>
+                </div>
+                <div class="card audience-item">
+                    <span class="audience-icon">👨‍👩‍👧</span>
+                    <h3>DEI Professionals & Families</h3>
+                    <p class="text-light">Building conscious legacies</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Image Placeholder 2 -->
+    <div class="container">
+        <div class="image-section">
+            <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Digital learning platform on laptop" loading="lazy">
+            <p class="image-caption">Interactive online learning platform accessible anytime</p>
+        </div>
+    </div>
+    
+    <!-- Reading Suggestion -->
+    <div class="container">
+        <div class="reading-suggestion">
+            <p>The course is completely free. To deepen your learning, we recommend the companion book <strong>Becoming White</strong> available on Amazon.</p>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Legacy Box LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modern icon library loaded as ES module -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+    <!-- Smooth scroll polyfill for older browsers -->
+    <script>
+        if (!('scrollBehavior' in document.documentElement.style)) {
+            import('https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js')
+                .then(() => smoothscroll.polyfill());
+        }
+    </script>
+</body>
+</html>
